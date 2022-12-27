@@ -72,10 +72,11 @@ clear-btn:hover {
   cursor: pointer;
 }
 
-.option-highlighted {
+.option.selected {
+  background-color: aqua;
+}
+
+.option.highlighted {
   background-color: rgba(0, 255, 255, 0.712);
   color: white;
-}
-.option-selected {
-  background-color: aqua;
 }
