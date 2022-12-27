@@ -11,9 +11,10 @@ const options = [
 ];
 
 function App() {
+  const [value, setValue] = useState<typeof options[0] | undefined>(options[0]);
   return (
     <div className="App">
-      <Select options={options} />
+      <Select options={options} onChange={(o) => setValue(o)} value={value} />
     </div>
   );
 }
