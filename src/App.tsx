@@ -2,6 +2,12 @@ import { useState } from "react";
 import "./App.css";
 import { Select } from "./Select";
 
+type SelectOption = {
+  multiple?: false;
+  label: string;
+  value: any;
+};
+
 const options = [
   { label: "First", value: "1" },
   { label: "Second", value: "2" },
@@ -11,10 +17,16 @@ const options = [
 ];
 
 function App() {
-  const [value, setValue] = useState<typeof options[0] | undefined>(options[0]);
+  const [value, setValue] = useState<SelectOption[] | undefined>(options[0]);
   return (
     <div className="App">
       <Select options={options} onChange={(o) => setValue(o)} value={value} />
+      <Select
+        options={options}
+        onChange={(o) => setValue(o)}
+        value={value}
+        multiple
+      />
     </div>
   );
 }
